@@ -29,17 +29,17 @@ Folow official docs of [React Transition Group](https://reactcommunity.org/react
 ```
 open ReasonTransitionGroup
 
-...
+/* ... */
 <Transition _in={inState} timeout={"enter": int, "exit": int}>
 ...{state => <div>{state |> ReasonReact.string}</div>}
 </Transiton>
-...
+/* ... */
 
-...
+/* ... */
 <CSSTransition _in={inState} timeout={"enter": int, "exit": int} classNames="myClassName">
 ...{state => <div>{state |> ReasonReact.string}</div>}
 </CSSTransiton>
-...
+/* ... */
 
 
 ```
@@ -48,3 +48,4 @@ open ReasonTransitionGroup
 
 Most of functionalities are ready.
 Js.t({..}) should be replaced with some strong types.
+Feel free to post issues.
