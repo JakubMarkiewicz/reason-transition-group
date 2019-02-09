@@ -1,18 +1,23 @@
-# Basic Reason Template
+# reason-transition-group
 
-Hello! This project allows you to quickly get started with Reason and BuckleScript. If you wanted a more sophisticated version, try the `react` template (`bsb -theme react -init .`).
+This is [Bucklescript](https://bucklescript.github.io/) bindings for [reason-transition-group](https://github.com/reactjs/react-transition-group).
 
-# Build
-```
-npm run build
-```
-
-# Build + Watch
+# Install, [npm](https://www.npmjs.com/package/@ahrefs/bs-recharts)
 
 ```
-npm run start
+yarn add reason-transition-group
 ```
 
+# Setup
 
-# Editor
-If you use `vscode`, Press `Windows + Shift + B` it will build automatically
+Add reason-transition-group to `bs-depenencies` in your `bsconfig.json`!
+
+```js
+{
+  /* ... */
+  "bs-dependencies": [
+    "reason-transition-group"
+  ],
+  /* ... */
+}
+```
