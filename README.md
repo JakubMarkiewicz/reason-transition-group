@@ -21,3 +21,30 @@ Add reason-transition-group to `bs-depenencies` in your `bsconfig.json`!
   /* ... */
 }
 ```
+
+# Usage
+
+Folow official docs of [React Transition Group](https://reactcommunity.org/react-transition-group/).
+
+```
+open ReasonTransitionGroup
+
+...
+<Transition _in={inState} timeout={"enter": int, "exit": int}>
+...{state => <div>{state |> ReasonReact.string}</div>}
+</Transiton>
+...
+
+...
+<CSSTransition _in={inState} timeout={"enter": int, "exit": int} classNames="myClassName">
+...{state => <div>{state |> ReasonReact.string}</div>}
+</CSSTransiton>
+...
+
+
+```
+
+# Current state
+
+Most of functionalities are ready.
+Js.t({..}) should be replaced with some strong types.
