@@ -1,6 +1,6 @@
 # reason-transition-group
 
-This is [Bucklescript](https://bucklescript.github.io/) bindings for [reason-transition-group](https://github.com/reactjs/react-transition-group).
+This is [Bucklescript](https://bucklescript.github.io/) bindings for [react-transition-group](https://github.com/reactjs/react-transition-group).
 
 # Install, [npm](https://www.npmjs.com/package/@ahrefs/bs-recharts)
 
