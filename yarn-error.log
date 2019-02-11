@@ -1,35 +1,35 @@
 Arguments: 
-  /home/jakub/.nvm/versions/node/v11.6.0/bin/node /home/jakub/.nvm/versions/node/v11.6.0/bin/yarn add ReasonReact
+  /home/kuba/.nvm/versions/node/v10.12.0/bin/node /home/kuba/.nvm/versions/node/v10.12.0/bin/yarn publish
 
 PATH: 
-  /home/jakub/.nvm/versions/node/v11.6.0/bin:/home/jakub/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+  /home/kuba/.nvm/versions/node/v10.12.0/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/snap/bin
 
 Yarn version: 
   1.12.3
 
 Node version: 
-  11.6.0
+  10.12.0
 
 Platform: 
   linux x64
 
 Trace: 
-  Error: https://npm.togedo.com/ReasonReact: no such package available
-      at Request.params.callback [as _callback] (/home/jakub/.nvm/versions/node/v11.6.0/lib/node_modules/yarn/lib/cli.js:65894:18)
-      at Request.self.callback (/home/jakub/.nvm/versions/node/v11.6.0/lib/node_modules/yarn/lib/cli.js:129018:22)
-      at Request.emit (events.js:188:13)
-      at Request.<anonymous> (/home/jakub/.nvm/versions/node/v11.6.0/lib/node_modules/yarn/lib/cli.js:129990:10)
-      at Request.emit (events.js:188:13)
-      at IncomingMessage.<anonymous> (/home/jakub/.nvm/versions/node/v11.6.0/lib/node_modules/yarn/lib/cli.js:129912:12)
-      at Object.onceWrapper (events.js:276:13)
-      at IncomingMessage.emit (events.js:193:15)
-      at endReadableNT (_stream_readable.js:1129:12)
-      at process.internalTickCallback (internal/process/next_tick.js:72:19)
+  Error: canceled
+      at Interface.<anonymous> (/home/kuba/.nvm/versions/node/v10.12.0/lib/node_modules/yarn/lib/cli.js:125278:13)
+      at Interface.emit (events.js:182:13)
+      at Interface._ttyWrite (readline.js:783:16)
+      at ReadStream.onkeypress (readline.js:168:10)
+      at ReadStream.emit (events.js:182:13)
+      at emitKeys (internal/readline.js:424:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1022:36)
+      at ReadStream.emit (events.js:182:13)
+      at addChunk (_stream_readable.js:283:12)
 
 npm manifest: 
   {
     "name": "reason-transition-group",
-    "version": "0.1.0",
+    "version": "1.0.1",
     "description": "Bucklescript bindings for react-transition-group",
     "scripts": {
       "build": "bsb -make-world",
@@ -37,15 +37,21 @@ npm manifest:
       "clean": "bsb -clean-world"
     },
     "keywords": [
-      "BuckleScript"
+      "BuckleScript",
+      "ReasonReact",
+      "Transition"
     ],
-    "author": "",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/JakubMarkiewicz/reason-transition-group"
+    },
     "license": "MIT",
     "devDependencies": {
       "bs-platform": "^4.0.18"
     },
     "dependencies": {
-      "react-transition-group": "^2.5.3"
+      "react-transition-group": "^2.5.3",
+      "reason-react": "^0.5.3"
     }
   }
 
@@ -81,7 +87,7 @@ Lockfile:
     resolved "https://npm.togedo.com/js-tokens/-/js-tokens-4.0.0.tgz#19203fb59991df98e3a287050d4647cdeaf32499"
     integrity sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
   
-  loose-envify@^1.3.1, loose-envify@^1.4.0:
+  loose-envify@^1.1.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
     version "1.4.0"
     resolved "https://npm.togedo.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
     integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -101,6 +107,16 @@ Lockfile:
       loose-envify "^1.3.1"
       object-assign "^4.1.1"
   
+  "react-dom@>=15.0.0 || >=16.0.0":
+    version "16.8.1"
+    resolved "https://npm.togedo.com/react-dom/-/react-dom-16.8.1.tgz#ec860f98853d09d39bafd3a6f1e12389d283dbb4"
+    integrity sha512-N74IZUrPt6UiDjXaO7UbDDFXeUXnVhZzeRLy/6iqqN1ipfjrhR60Bp5NuBK+rv3GMdqdIuwIl22u1SYwf330bg==
+    dependencies:
+      loose-envify "^1.1.0"
+      object-assign "^4.1.1"
+      prop-types "^15.6.2"
+      scheduler "^0.13.1"
+  
   react-lifecycles-compat@^3.0.4:
     version "3.0.4"
     resolved "https://npm.togedo.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
@@ -116,7 +132,33 @@ Lockfile:
       prop-types "^15.6.2"
       react-lifecycles-compat "^3.0.4"
   
+  "react@>=15.0.0 || >=16.0.0":
+    version "16.8.1"
+    resolved "https://npm.togedo.com/react/-/react-16.8.1.tgz#ae11831f6cb2a05d58603a976afc8a558e852c4a"
+    integrity sha512-wLw5CFGPdo7p/AgteFz7GblI2JPOos0+biSoxf1FPsGxWQZdN/pj6oToJs1crn61DL3Ln7mN86uZ4j74p31ELQ==
+    dependencies:
+      loose-envify "^1.1.0"
+      object-assign "^4.1.1"
+      prop-types "^15.6.2"
+      scheduler "^0.13.1"
+  
+  reason-react@^0.5.3:
+    version "0.5.3"
+    resolved "https://npm.togedo.com/reason-react/-/reason-react-0.5.3.tgz#10601809742fd991109ec9d69ad4baf2c3f17540"
+    integrity sha512-dUkoqXrP/gOjkmkW+k/otEUP+yeXH5+QfdxNT5EW60MXM3zbCdFhbNzKBbjYOZ6x96UbxK869CObjX04BdJEDg==
+    dependencies:
+      react ">=15.0.0 || >=16.0.0"
+      react-dom ">=15.0.0 || >=16.0.0"
+  
   regenerator-runtime@^0.12.0:
     version "0.12.1"
     resolved "https://npm.togedo.com/regenerator-runtime/-/regenerator-runtime-0.12.1.tgz#fa1a71544764c036f8c49b13a08b2594c9f8a0de"
     integrity sha512-odxIc1/vDlo4iZcfXqRYFj0vpXFNoGdKMAUieAlFYO6m/nl5e9KR/beGf41z4a1FI+aQgtjhuaSlDxQ0hmkrHg==
+  
+  scheduler@^0.13.1:
+    version "0.13.1"
+    resolved "https://npm.togedo.com/scheduler/-/scheduler-0.13.1.tgz#1a217df1bfaabaf4f1b92a9127d5d732d85a9591"
+    integrity sha512-VJKOkiKIN2/6NOoexuypwSrybx13MY7NSy9RNt8wPvZDMRT1CW6qlpF5jXRToXNHz3uWzbm2elNpZfXfGPqP9A==
+    dependencies:
+      loose-envify "^1.1.0"
+      object-assign "^4.1.1"

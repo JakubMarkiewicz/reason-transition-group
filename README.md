@@ -30,22 +30,27 @@ Folow official docs of [React Transition Group](https://reactcommunity.org/react
 open ReasonTransitionGroup
 
 /* ... */
-<Transition _in={inState} timeout={"enter": int, "exit": int}>
+<Transition _in={inState} timeout=`int(500)>
 ...{state => <div>{state |> ReasonReact.string}</div>}
 </Transiton>
 /* ... */
 
 /* ... */
-<CSSTransition _in={inState} timeout={"enter": int, "exit": int} classNames="myClassName">
+<CSSTransition _in={inState} timeout=`obj(CSSTransition.timeoutFull(~enter: 500, ~exit:0, ())) classNames=`string(myClassName)>
 ...{state => <div>{state |> ReasonReact.string}</div>}
 </CSSTransiton>
 /* ... */
 
+
+/* ... */
+<CSSTransition _in={inState} timeout=`obj(CSSTransition.timeoutFull(~enter: int, ~exit:int, ())) classNames=`obj(CSSTransition.classFull(~appear: str, ~exit: str, ()))>
+...{state => <div>{state |> ReasonReact.string}</div>}
+</CSSTransiton>
+/* ... */
 
 ```
 
 # Current state
 
 Most of functionalities are ready.
-Js.t({..}) should be replaced with some strong types.
 Feel free to post issues.
