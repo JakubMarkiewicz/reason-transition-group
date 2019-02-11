@@ -26,7 +26,7 @@ Add reason-transition-group to `bs-depenencies` in your `bsconfig.json`!
 
 Folow official docs of [React Transition Group](https://reactcommunity.org/react-transition-group/).
 
-```
+```reason
 open ReasonTransitionGroup
 
 /* ... */
@@ -49,6 +49,8 @@ open ReasonTransitionGroup
 /* ... */
 
 ```
+
+Also check react-transition-group examples translated to reason-react [here](./EXAMPLE.md)
 
 # Current state
 
