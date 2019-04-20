@@ -1,6 +1,3 @@
-[@bs.module "react-transition-group/index"]
-external transition: ReasonReact.reactClass = "Transition";
-
 type state = string;
 type node = Dom.element;
 type isAppearing = bool;
@@ -15,7 +12,7 @@ type timeoutFull = {
   exit: int,
 };
 
-type timeout('a) = [< | `int(int) | `obj(timeoutFull)] as 'a;
+type timeout = [ | `int(int) | `obj(timeoutFull)];
 
 module TimeoutValue = {
   type t;
@@ -23,68 +20,66 @@ module TimeoutValue = {
   external timeoutFull: timeoutFull => t = "%identity";
 };
 
-let setTimeout = (a: timeout('a)) =>
+let setTimeout = (a: timeout) =>
   switch (a) {
   | `int(int) => TimeoutValue.int(int)
   | `obj(timeoutFull) => TimeoutValue.timeoutFull(timeoutFull)
   };
 
-[@bs.obj]
-external makeProps:
-  (
-    ~_in: bool=?,
-    ~mountOnEnter: bool=?,
-    ~unmountOnExit: bool=?,
-    ~appear: bool=?,
-    ~enter: bool=?,
-    ~exit: bool=?,
-    ~timeout: TimeoutValue.t=?,
-    ~onEnter: enterMethod=?,
-    ~onEntering: enterMethod=?,
-    ~onEntered: enterMethod=?,
-    ~onExit: exitMethod=?,
-    ~onExiting: exitMethod=?,
-    ~onExited: exitMethod=?,
-    unit
-  ) =>
-  _ =
-  "";
+module InternalBind = {
+  [@bs.module "react-transition-group/esm/index"] [@react.component]
+  external make:
+    (
+      ~_in: bool=?,
+      ~mountOnEnter: bool=?,
+      ~unmountOnExit: bool=?,
+      ~appear: bool=?,
+      ~enter: bool=?,
+      ~exit: bool=?,
+      ~timeout: TimeoutValue.t=?,
+      ~onEnter: enterMethod=?,
+      ~onEntering: enterMethod=?,
+      ~onEntered: enterMethod=?,
+      ~onExit: exitMethod=?,
+      ~onExiting: exitMethod=?,
+      ~onExited: exitMethod=?,
+      ~children: state => React.element
+    ) =>
+    React.element =
+    "Transition";
+};
 
+[@react.component]
 let make =
     (
-      ~_in=?,
-      ~mountOnEnter=?,
-      ~unmountOnExit=?,
-      ~appear=?,
-      ~enter=?,
-      ~exit=?,
-      ~timeout=?,
-      ~onEnter=?,
-      ~onEntering=?,
-      ~onEntered=?,
-      ~onExit=?,
-      ~onExiting=?,
-      ~onExited=?,
-      children: state => ReasonReact.reactElement,
+      ~_in: bool=?,
+      ~mountOnEnter: bool=?,
+      ~unmountOnExit: bool=?,
+      ~appear: bool=?,
+      ~enter: bool=?,
+      ~exit: bool=?,
+      ~timeout: timeout=?,
+      ~onEnter: enterMethod=?,
+      ~onEntering: enterMethod=?,
+      ~onEntered: enterMethod=?,
+      ~onExit: exitMethod=?,
+      ~onExiting: exitMethod=?,
+      ~onExited: exitMethod=?,
+      ~children: state => React.element,
     ) =>
-  ReasonReact.wrapJsForReason(
-    ~reactClass=transition,
-    ~props=
-      makeProps(
-        ~_in?,
-        ~mountOnEnter?,
-        ~unmountOnExit?,
-        ~appear?,
-        ~enter?,
-        ~exit?,
-        ~timeout=?timeout->Belt.Option.map(v => setTimeout(v)),
-        ~onEnter?,
-        ~onEntering?,
-        ~onEntered?,
-        ~onExit?,
-        ~onExiting?,
-        ~onExited?,
-        (),
-      ),
-    children,
-  );
+  <InternalBind
+    _in
+    mountOnEnter
+    unmountOnExit
+    appear
+    enter
+    exit
+    timeout={setTimeout(timeout)}
+    onEnter
+    onEntering
+    onEntered
+    onExit
+    onExiting
+    onExited>
+    {state => children(state)}
+  </InternalBind>;
