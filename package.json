@@ -1,6 +1,6 @@
 {
   "name": "reason-transition-group",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Bucklescript bindings for react-transition-group",
   "scripts": {
     "build": "bsb -make-world",
@@ -18,10 +18,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^4.0.18"
+    "bs-platform": "^5.0.3",
+    "reason-react": "^0.7.0"
   },
   "dependencies": {
-    "react-transition-group": "^2.5.3",
-    "reason-react": "^0.5.3"
+    "react-transition-group": "^4.0.0"
   }
 }
