@@ -1,6 +1,6 @@
 {
   "name": "reason-transition-group",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Bucklescript bindings for react-transition-group",
   "scripts": {
     "build": "bsb -make-world",
