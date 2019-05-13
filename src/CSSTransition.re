@@ -60,7 +60,7 @@ let setTimeout = (a: timeout) =>
   };
 
 module InternalBind = {
-  [@bs.module "react-transition-group/esm/index"] [@react.component]
+  [@bs.module "react-transition-group/cjs/index"] [@react.component]
   external make:
     (
       ~_in: bool=?,
