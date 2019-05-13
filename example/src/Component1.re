@@ -1,9 +1,5 @@
 open ReasonTransitionGroup;
 
-type state = {show: bool};
-type action =
-  | Toggle;
-
 [@react.component]
 let make = () => {
   let (show, toggleShow) = React.useState(() => false);

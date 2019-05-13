@@ -3,3 +3,5 @@ external make:
   (~appear: bool=?, ~enter: bool=?, ~exit: bool=?, ~children: React.element) =>
   React.element =
   "TransitionGroup";
+
+let make = make;
