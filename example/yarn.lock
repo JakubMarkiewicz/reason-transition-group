@@ -2081,8 +2081,8 @@ locate-path@^3.0.0:
     path-exists "^3.0.0"
 
 lodash@^4.17.11, lodash@^4.17.3:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
 
 loglevel@^1.6.1:
   version "1.6.1"
@@ -2910,7 +2910,7 @@ reason-react@>=0.7.0:
     react-dom ">=16.8.1"
 
 reason-transition-group@../:
-  version "2.0.0"
+  version "2.0.2"
   dependencies:
     react-transition-group "^4.0.0"
 
