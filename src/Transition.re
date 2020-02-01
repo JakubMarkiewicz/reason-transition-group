@@ -76,7 +76,7 @@ let make =
     exit
     timeout={
       switch (timeout) {
-      | Some(c) => Some(setTimeout(c))
+      | Some(timeout) => Some(setTimeout(timeout))
       | None => None
       }
     }
