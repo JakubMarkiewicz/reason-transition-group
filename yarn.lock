@@ -9,10 +9,10 @@
   dependencies:
     regenerator-runtime "^0.12.0"
 
-bs-platform@^5.0.3:
-  version "5.0.3"
-  resolved "https://npm.togedo.com/bs-platform/-/bs-platform-5.0.3.tgz#2b167603ef52574cb9534fabab702f6013715e6c"
-  integrity sha512-GAeypBebeDGTay5kJ3v5Z3Whp1Q4zQ0hAttflVtPG3zps88xDZnVAlS3JGIIBDmJFEMyNtv5947a/IWKvWXcPw==
+bs-platform@^7.0.2-dev.2:
+  version "7.0.2-dev.2"
+  resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-7.0.2-dev.2.tgz#ae055440ce075348179f84bac591ff874201e082"
+  integrity sha512-IMHf+9JNrBZy4jpbDZROPjF/13xro5rGGuGmRqlbJe0rImXtHZMmT3jNFXveou/F5hKU8c40jpQEGdUUNv1iFA==
 
 dom-helpers@^3.4.0:
   version "3.4.0"

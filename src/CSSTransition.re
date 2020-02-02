@@ -63,20 +63,20 @@ module InternalBind = {
   [@bs.module "react-transition-group/cjs/index"] [@react.component]
   external make:
     (
-      ~_in: bool=?,
-      ~mountOnEnter: bool=?,
-      ~unmountOnExit: bool=?,
-      ~appear: bool=?,
-      ~enter: bool=?,
-      ~exit: bool=?,
-      ~classNames: ClassValue.t=?,
-      ~timeout: TimeoutValue.t=?,
-      ~onEnter: enterMethod=?,
-      ~onEntering: enterMethod=?,
-      ~onEntered: enterMethod=?,
-      ~onExit: exitMethod=?,
-      ~onExiting: exitMethod=?,
-      ~onExited: exitMethod=?,
+      ~_in: option(bool),
+      ~mountOnEnter: option(bool),
+      ~unmountOnExit: option(bool),
+      ~appear: option(bool),
+      ~enter: option(bool),
+      ~exit: option(bool),
+      ~classNames: option(ClassValue.t),
+      ~timeout: option(TimeoutValue.t),
+      ~onEnter: option(enterMethod),
+      ~onEntering: option(enterMethod),
+      ~onEntered: option(enterMethod),
+      ~onExit: option(exitMethod),
+      ~onExiting: option(exitMethod),
+      ~onExited: option(exitMethod),
       ~children: state => React.element
     ) =>
     React.element =
@@ -86,20 +86,20 @@ module InternalBind = {
 [@react.component]
 let make =
     (
-      ~_in: bool=?,
-      ~mountOnEnter: bool=?,
-      ~unmountOnExit: bool=?,
-      ~appear: bool=?,
-      ~enter: bool=?,
-      ~exit: bool=?,
-      ~timeout: timeout=?,
-      ~classNames: classNames=?,
-      ~onEnter: enterMethod=?,
-      ~onEntering: enterMethod=?,
-      ~onEntered: enterMethod=?,
-      ~onExit: exitMethod=?,
-      ~onExiting: exitMethod=?,
-      ~onExited: exitMethod=?,
+      ~_in=?,
+      ~mountOnEnter=?,
+      ~unmountOnExit=?,
+      ~appear=?,
+      ~enter=?,
+      ~exit=?,
+      ~timeout=?,
+      ~classNames=?,
+      ~onEnter=?,
+      ~onEntering=?,
+      ~onEntered=?,
+      ~onExit=?,
+      ~onExiting=?,
+      ~onExited=?,
       ~children: state => React.element,
     ) =>
   <InternalBind
@@ -107,10 +107,20 @@ let make =
     mountOnEnter
     unmountOnExit
     appear
-    classNames={setClassName(classNames)}
+    classNames={
+      switch (classNames) {
+      | Some(classNames) => Some(setClassName(classNames))
+      | None => None
+      }
+    }
     enter
     exit
-    timeout={setTimeout(timeout)}
+    timeout={
+      switch (timeout) {
+      | Some(timeout) => Some(setTimeout(timeout))
+      | None => None
+      }
+    }
     onEnter
     onEntering
     onEntered
