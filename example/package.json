@@ -16,14 +16,15 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "bs-css": "^8.0.4",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
-    "reason-react": ">=0.7.0",
+    "bs-css": "^14.0.1",
+    "bs-css-emotion": "^2.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "reason-react": "^0.9.1",
     "reason-transition-group": "../"
   },
   "devDependencies": {
-    "bs-platform": "^5.0.3",
+    "bs-platform": "^9.0.2",
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.0.1",
     "webpack-cli": "^3.1.1",

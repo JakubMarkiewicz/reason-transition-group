@@ -18,10 +18,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "bs-platform": "^7.0.2-dev.2",
-    "reason-react": "^0.7.0"
+    "bs-platform": "^9.0.2",
+    "reason-react": "^0.9.1"
   },
   "dependencies": {
-    "react-transition-group": "^4.0.0"
+    "react-transition-group": "^4.4.1"
   }
 }
