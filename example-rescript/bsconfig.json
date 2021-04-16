@@ -1,6 +1,5 @@
 {
-  "name": "reason-transition-group",
-  "version": "0.1.0",
+  "name": "react-hooks-template",
   "reason": {
     "react-jsx": 3
   },
@@ -14,11 +13,7 @@
       "in-source": true
     }
   ],
-  "bs-dependencies": ["reason-react"],
-  "warnings": {
-    "error": "+101"
-  },
+  "suffix": ".bs.js",
   "namespace": true,
-  "suffix": ".bs.js"
-
+  "bs-dependencies": ["reason-react", "reason-transition-group", "bs-css", "bs-css-emotion"]
 }
